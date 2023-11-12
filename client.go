@@ -310,6 +310,11 @@ func (c *Client) Close() error {
 	return c.broker.Close()
 }
 
+// Ping performs a ping against the redis connection.
+func (c *Client) Ping() error {
+	return c.broker.Ping()
+}
+
 // Enqueue enqueues the given task to a queue.
 //
 // Enqueue returns TaskInfo and nil error if the task is enqueued successfully, otherwise returns a non-nil error.
